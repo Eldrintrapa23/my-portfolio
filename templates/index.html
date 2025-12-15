@@ -274,16 +274,21 @@
       apiHost: "https://my-portfolio-flowise.onrender.com",
       theme: {
         chatWindow: {
-          // 1. This REMOVES the "Powered by Flowise" footer
+          // 1. Hide the original "Powered by Flowise"
           showPoweredBy: false,
 
-          // 2. This puts your name at the very top
-          title: "Powered by Eldrin A. Trapa",
+          // 2. Put your name in the input box instead
+          textInput: {
+            placeholder: "Powered by Eldrin A. Trapa | Type a question...",
+            backgroundColor: "#ffffff",
+            textColor: "#303235",
+            sendButtonColor: "#4f46e5",
+          },
 
-          // 3. This puts your name in the first message
-          welcomeMessage: "Hi! I am the AI assistant powered by Eldrin A. Trapa. How can I help you?",
+          // 3. Put your name at the top
+          title: "Assistant (Powered by Eldrin)",
 
-          // Colors to match your site
+          // standard colors
           backgroundColor: "#ffffff",
           userMessage: {
             backgroundColor: "#4f46e5",

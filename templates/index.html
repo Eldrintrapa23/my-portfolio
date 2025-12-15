@@ -271,7 +271,7 @@
     </div>
   </section>
 
-  <script>
+  <>
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -295,40 +295,14 @@ if (form) {
     }
   });
 }
-</script>
 
-  <script type="module">
+<script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
-      chatflowid: "e401f1ad-2f87-4649-b74b-5e1eef32f18d",
-      apiHost: "https://my-portfolio-flowise.onrender.com",
-      theme: {
-        chatWindow: {
-          showPoweredBy: false,
-          textInput: {
-            placeholder: "Powered by Eldrin A. Trapa | Type a question...",
-            backgroundColor: "#ffffff",
-            textColor: "#303235",
-            sendButtonColor: "#4f46e5",
-          },
-          title: "Assistant (Powered by Eldrin)",
-          backgroundColor: "#ffffff",
-          userMessage: {
-            backgroundColor: "#4f46e5",
-            textColor: "#ffffff",
-            showAvatar: true,
-          },
-          botMessage: {
-            backgroundColor: "#f7f8ff",
-            textColor: "#303235",
-            showAvatar: true,
-            avatarSrc: "profile.jpg",
-          },
-        }
-      }
+        chatflowid: "dc51db04-dde6-4763-a71c-be8dd53eaf6a",
+        apiHost: "https://my-portfolio-flowise.onrender.com",
     })
-  </script>
-
+</script>
 
 
 </body>

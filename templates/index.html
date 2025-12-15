@@ -272,6 +272,28 @@
     Chatbot.init({
       chatflowid: "01ed8ab6-6487-4af5-8730-882379bc400b",
       apiHost: "https://my-portfolio-flowise.onrender.com",
+      theme: {
+        chatWindow: {
+          showPoweredBy: false, /* This hides "Powered by Flowise" */
+          title: "Powered by Eldrin A. Trapa", /* Your custom title */
+          welcomeMessage: "Hello! I am the AI assistant powered by Eldrin A. Trapa. Ask me anything about his projects or skills!",
+          backgroundColor: "#ffffff",
+          height: 700,
+          width: 400,
+          fontSize: 16,
+          userMessage: {
+            backgroundColor: "#4f46e5", /* Matches your Indigo website theme */
+            textColor: "#ffffff",
+            showAvatar: true,
+          },
+          botMessage: {
+            backgroundColor: "#f7f8ff",
+            textColor: "#303235",
+            showAvatar: true,
+            avatarSrc: "profile.jpg", /* Uses your profile picture if available */
+          },
+        }
+      }
     })
   </script>
 

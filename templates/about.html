@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}About - Eldrin A. Trapa{% endblock %}
+
+{% block content %}
+
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">About Me</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="flex justify-center">
+        <img src="/static/profile1.jpg" alt="Eldrin A. Trapa" class="w-full max-w-sm rounded-2xl shadow-2xl">
+      </div>
+
+      <div class="space-y-6">
+        <p class="text-lg text-gray-600 leading-relaxed">I'm Eldrin, a passionate web designer and developer from the Philippines. I specialize in creating beautiful, responsive websites that deliver real results for businesses of all sizes.</p>
+
+        <p class="text-lg text-gray-600 leading-relaxed">With a focus on clean code and excellent user experience, I help businesses establish a strong online presence. Whether you need a portfolio site, e-commerce platform, or web application, I've got the skills to make it happen.</p>
+
+        <h3 class="text-2xl font-bold text-indigo-600 pt-4">What I Do</h3>
+        <p class="text-lg text-gray-600 leading-relaxed">I design and develop websites that are not just visually stunning, but also functional and performant. My approach combines modern design principles with solid development practices.</p>
+
+        <h3 class="text-2xl font-bold text-indigo-600 pt-4">My Background</h3>
+        <p class="text-lg text-gray-600 leading-relaxed">Based in the Philippines, I've worked with various clients to build their digital presence. I'm constantly learning new technologies and staying updated with industry trends.</p>
+
+        <div class="grid grid-cols-3 gap-4 pt-8">
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <h4 class="text-3xl font-bold gradient-text">15+</h4>
+            <p class="text-gray-600 mt-2">Projects Completed</p>
+          </div>
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <h4 class="text-3xl font-bold gradient-text">10+</h4>
+            <p class="text-gray-600 mt-2">Happy Clients</p>
+          </div>
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <h4 class="text-3xl font-bold gradient-text">2+</h4>
+            <p class="text-gray-600 mt-2">Years in Web Dev</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

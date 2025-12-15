@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Portfolio{% endblock %}
+
+{% block content %}
+
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-bold text-center text-gray-900 mb-8">Admin Panel</h1>
+
+    <div class="flex justify-center gap-4 mb-12">
+      <a href="/admin" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">Projects</a>
+      <a href="/messages" class="px-6 py-3 bg-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-400 transition">Messages</a>
+    </div>
+
+    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Add New Project</h2>
+      <form method="POST" class="space-y-4">
+        <input type="text" name="title" placeholder="Project Title" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-600 focus:outline-none transition">
+        <input type="text" name="description" placeholder="Description" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-600 focus:outline-none transition">
+        <input type="text" name="image" placeholder="Image filename (project1.jpg)" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-600 focus:outline-none transition">
+        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition">Add Project</button>
+      </form>
+    </div>
+
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Project List</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for p in projects %}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/{{ p[3] }}" alt="{{ p[1] }}" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ p[1] }}</h3>
+          <p class="text-gray-600 mb-4">{{ p[2] }}</p>
+          <a href="/delete/{{ p[0] }}" class="block w-full text-center px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition" onclick="return confirm('Delete this project?')">Delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

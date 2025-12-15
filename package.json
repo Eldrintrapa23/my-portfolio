@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-app",
+  "version": "1.0.0",
+  "description": "Portfolio App with Tailwind CSS",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./static/tailwind.css -o ./static/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  }
+}

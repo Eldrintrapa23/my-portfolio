@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <link href="/static/output.css" rel="stylesheet">
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+
+  <nav class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <ul class="flex justify-center gap-8 flex-wrap">
+        <li><a href="/" class="font-semibold text-gray-700 hover:text-indigo-600 transition">Home</a></li>
+        <li><a href="/about" class="font-semibold text-gray-700 hover:text-indigo-600 transition">About</a></li>
+        <li><a href="/services" class="font-semibold text-gray-700 hover:text-indigo-600 transition">Services</a></li>
+        <li><a href="/skills" class="font-semibold text-gray-700 hover:text-indigo-600 transition">Skills</a></li>
+        <li><a href="/projects" class="font-semibold text-gray-700 hover:text-indigo-600 transition">Works</a></li>
+        <li><a href="/contact" class="font-semibold text-gray-700 hover:text-indigo-600 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+<footer class="bg-gray-900 text-gray-300 text-center py-6 mt-12">
+  <p>&copy; 2024 Eldrin A. Trapa. All rights reserved.</p>
+</footer>
+
+<script>
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    const res = await fetch('/submit-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+    
+    if (res.ok) {
+      document.getElementById('success-message').classList.remove('hidden');
+      form.reset();
+      setTimeout(() => {
+        document.getElementById('success-message').classList.add('hidden');
+      }, 5000);
+    }
+  });
+}
+</script>
+
+</body>
+
+</html>

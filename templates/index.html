@@ -271,38 +271,39 @@
     </div>
   </section>
 
-  <>
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    const res = await fetch('/submit-contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
-    
-    if (res.ok) {
-      document.getElementById('success-message').classList.remove('hidden');
-      form.reset();
-      setTimeout(() => {
-        document.getElementById('success-message').classList.add('hidden');
-      }, 5000);
+  <script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        const res = await fetch('/submit-contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+        
+        if (res.ok) {
+          document.getElementById('success-message').classList.remove('hidden');
+          form.reset();
+          setTimeout(() => {
+            document.getElementById('success-message').classList.add('hidden');
+          }, 5000);
+        }
+      });
     }
-  });
-}
+  </script>
 
-<script type="module">
+  <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
         chatflowid: "dc51db04-dde6-4763-a71c-be8dd53eaf6a",
         apiHost: "https://my-portfolio-flowise.onrender.com",
     })
-</script>
+  </script>
 
 
 </body>
